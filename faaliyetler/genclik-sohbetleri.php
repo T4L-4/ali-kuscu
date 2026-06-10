@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="tr">
+<?php
+$base_path = '../';
+$page_title = 'Gençlik Sohbetleri | Ali Kuşçu Camii Gençlik Merkezi';
+$page_desc = 'Günümüz meselelerini akılcı, sorgulayıcı ve ahlaki bir perspektifle ele aldığımız dinamik buluşmalar.';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gençlik Sohbetleri | Ali Kuşçu Camii Gençlik Merkezi</title>
-  <link rel="stylesheet" href="../style.css" />
-</head>
-
-<body>
-
-  <!-- Header Section -->
-  <header class="main-header scrolled" id="main-header">
-    <div class="nav-container">
-      <a href="../index.html" class="logo notranslate" id="nav-logo">
-        <span>Ali Kuşçu</span> Camii
-      </a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Ana Sayfa</a></li>
-      </ul>
-    </div>
-  </header>
-
+include '../includes/header.php';
+include '../includes/navbar.php';
+include '../includes/disclaimer.php';
+?>
   <!-- Detail Content Section -->
   <main class="detail-container">
     <span class="section-tag">Faaliyet Detayı</span>
@@ -69,19 +54,10 @@
       </p>
 
       <div style="margin-top: 50px;">
-        <a href="../index.html#activities" class="btn btn-primary">&larr; Faaliyetlere Geri Dön</a>
+        <a href="<?php echo $base_path; ?>index.php#activities" class="btn btn-primary">&larr; Faaliyetlere Geri Dön</a>
       </div>
     </div>
   </main>
-
-  <!-- Footer Section -->
-  <footer class="main-footer">
-    <div class="footer-bottom">
-      <p>&copy; 2026 Ali Kuşçu Camii Gençlik Merkezi. Tüm Hakları Saklıdır.</p>
-    </div>
-  </footer>
-
-  <script src="../script.js"></script>
-</body>
-
-</html>
+<?php
+include '../includes/footer.php';
+?>

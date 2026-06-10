@@ -125,9 +125,11 @@ header.main-header.scrolled .nav-container {
   font-weight: 700;
   color: var(--text-primary);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .logo span {
@@ -171,6 +173,12 @@ header.main-header.scrolled .nav-container {
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .menu-toggle {
@@ -895,6 +903,43 @@ footer.main-footer {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-container {
+    padding: 12px 16px;
+  }
+
+  header.main-header.scrolled .nav-container {
+    padding: 8px 16px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  section.section {
+    padding: 60px 16px;
+  }
+
+  .detail-container {
+    padding: 60px 16px;
+  }
+
+  .history-text p {
+    text-align: left;
+  }
+
+  body[dir="rtl"] .history-text p {
+    text-align: right;
+  }
+
+  .upcoming-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
@@ -1017,6 +1062,8 @@ footer.main-footer {
 
 .upcoming-header {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
@@ -1227,7 +1274,8 @@ body.light-theme .lang-dropdown a:hover {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 99999;
-  display: none; /* Controlled by script */
+  display: none;
+  /* Controlled by script */
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -1260,6 +1308,7 @@ body.light-theme .disclaimer-card {
     opacity: 0;
     transform: scale(0.95) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -1313,7 +1362,8 @@ iframe.goog-te-banner-frame,
   width: 0 !important;
 }
 
-html, body {
+html,
+body {
   top: 0px !important;
   margin-top: 0px !important;
 }
@@ -1437,4 +1487,274 @@ body[dir="rtl"] .btn-upcoming-detail::after {
 
 body[dir="rtl"] .btn-upcoming-detail:hover::after {
   transform: translateX(-4px);
+}
+
+/* Countdown Section Styles */
+/* Countdown Section Styles */
+.countdown-section {
+  padding: 100px 20px;
+  border-bottom: 1px solid var(--border-color);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.countdown-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+body.light-theme .countdown-container {
+  background: rgba(0, 0, 0, 0.01);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.countdown-container:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: var(--border-active);
+  box-shadow: 0 30px 60px rgba(230, 57, 70, 0.12);
+}
+
+.countdown-info .section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary) 0%, #ff4d5a 100%);
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+  animation: tagPulse 2s infinite alternate;
+  margin-bottom: 20px;
+}
+
+@keyframes tagPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+  }
+
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 22px rgba(230, 57, 70, 0.6);
+  }
+}
+
+.countdown-event-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.countdown-event-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.countdown-meta-list {
+  list-style: none;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.countdown-meta-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.countdown-widget {
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .countdown-widget {
+  background: rgba(0, 0, 0, 0.005);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.countdown-widget h3 {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.timer-display {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 4px;
+}
+
+.timer-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-num {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--primary);
+  background: rgba(230, 57, 70, 0.08);
+  border: 1px solid rgba(230, 57, 70, 0.15);
+  border-radius: 12px;
+  width: 72px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.timer-divider {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--border-color);
+  margin-bottom: 30px;
+}
+
+/* Tabs Styles for etkinlikler.php */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.tab-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.tab-btn:hover {
+  border-color: var(--border-active);
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+}
+
+.tab-content {
+  display: none;
+  animation: tabFadeIn 0.4s ease-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Overrides for Countdown & Tabs */
+@media (max-width: 992px) {
+  .countdown-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown-section {
+    padding: 60px 16px;
+  }
+
+  .countdown-widget {
+    padding: 24px;
+  }
+
+  .timer-num {
+    width: 60px;
+    height: 68px;
+    font-size: 1.8rem;
+  }
+
+  .timer-divider {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-display {
+    gap: 2px;
+  }
+
+  .timer-num {
+    width: 48px;
+    height: 56px;
+    font-size: 1.4rem;
+    border-radius: 8px;
+  }
+
+  .timer-divider {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .tab-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .tab-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

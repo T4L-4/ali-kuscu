@@ -307,4 +307,57 @@ document.addEventListener('DOMContentLoaded', () => {
       setLanguage(savedLang);
     }, 1200); // Wait slightly for translate frame to load
   }
+
+  // Countdown Timer Logic
+  const timerEl = document.getElementById('event-timer');
+  if (timerEl) {
+    const targetDateStr = timerEl.getAttribute('data-target-date');
+    const targetDate = new Date(targetDateStr).getTime();
+
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        timerEl.innerHTML = '<div class="timer-segment" style="grid-column: 1/-1; width: 100%; text-align: center;"><span class="timer-num" style="font-size: 1.4rem; width: auto; padding: 12px 24px; border-radius: 8px;">Kayıtlar Kapandı / Etkinlik Başladı</span></div>';
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+      if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+      if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+      if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    };
+
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+  }
+
+  // Tabs Toggle Logic for etkinlikler.php
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetTab = btn.getAttribute('data-tab');
+
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetContent = document.getElementById(targetTab);
+      if (targetContent) targetContent.classList.add('active');
+    });
+  });
 });

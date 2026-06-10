@@ -22,13 +22,47 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Build static HTML files from PHP
+        run: |
+          # Create build directories
+          mkdir -p build/faaliyetler
+          
+          # Copy static files to build directory
+          cp style.css build/
+          cp script.js build/
+          cp cami.png build/ || true
+          cp katkida_bulunanlar.json build/
+          
+          # Compile PHP files into HTML
+          php index.php > build/index.html
+          php faaliyetler.php > build/faaliyetler.html
+          php katkida-bulunanlar.php > build/katkida-bulunanlar.html
+          php etkinlikler.php > build/etkinlikler.html
+          
+          # Compile activity pages
+          php faaliyetler/astronomi-gozlemleri.php > build/faaliyetler/astronomi-gozlemleri.html
+          php faaliyetler/genclik-sohbetleri.php > build/faaliyetler/genclik-sohbetleri.html
+          php faaliyetler/kitap-tahlilleri.php > build/faaliyetler/kitap-tahlilleri.html
+          php faaliyetler/sosyal-yardim.php > build/faaliyetler/sosyal-yardim.html
+          php faaliyetler/spor-etkinlikleri.php > build/faaliyetler/spor-etkinlikleri.html
+          php faaliyetler/yazilim-atolyesi.php > build/faaliyetler/yazilim-atolyesi.html
+          
+          # Convert .php references to .html inside compiled files
+          find build -type f -name "*.html" -exec sed -i 's/\.php/\.html/g' {} +
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .   # index.html kök dizindeyse "." doğru
+          path: ./build
 
   deploy:
     needs: build

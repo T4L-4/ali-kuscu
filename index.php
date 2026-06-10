@@ -1,61 +1,13 @@
-<!DOCTYPE html>
-<html lang="tr">
+<?php
+$base_path = '';
+$is_home = true;
+$page_title = 'Ali Kuşçu Camii | İlim, Bilim ve Gençlik Merkezi';
+$page_desc = 'Ali Kuşçu ve Fatih Sultan Mehmed\'in ilim ve fen mirasını geleceğe taşıyoruz. Gençliği bilim, teknoloji ve irfanla buluşturan cami.';
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ali Kuşçu Camii | İlim, Bilim ve Gençlik Merkezi</title>
-  <meta name="description"
-    content="Ali Kuşçu ve Fatih Sultan Mehmed'in ilim ve fen mirasını geleceğe taşıyoruz. Gençliği bilim, teknoloji ve irfanla buluşturan cami." />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-  <!-- Translation Disclaimer Modal -->
-  <div id="translate-disclaimer" class="translate-disclaimer">
-    <div class="disclaimer-card">
-      <div class="disclaimer-icon">⚠️</div>
-      <p id="disclaimer-text" class="disclaimer-text"></p>
-      <button class="disclaimer-btn" id="disclaimer-close-btn">OK</button>
-    </div>
-  </div>
-
-  <!-- Header Section -->
-  <header class="main-header" id="main-header">
-    <div class="nav-container">
-      <a href="#hero" class="logo notranslate" id="nav-logo">
-        <span>Ali Kuşçu</span> Camii
-      </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#hero" class="active" id="link-hero">Giriş</a></li>
-        <li><a href="#life" id="link-life">Ali Kuşçu</a></li>
-        <li><a href="#activities" id="link-activities">Faaliyetler</a></li>
-        <li><a href="#upcoming" id="link-upcoming">Yaklaşanlar</a></li>
-        <li><a href="#contributors" id="link-contributors">Katkıda Bulunanlar</a></li>
-        <li><a href="faaliyetler.html" id="link-all-activities" style="color: var(--primary); font-weight: 700;">Tüm
-            Faaliyetler</a></li>
-      </ul>
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <div class="lang-selector notranslate">
-          <button class="lang-btn" id="lang-btn">🌐 <span id="lang-text">TR</span></button>
-          <div class="lang-dropdown" id="lang-dropdown">
-            <a href="#" data-lang="tr">TR</a>
-            <a href="#" data-lang="en">EN</a>
-            <a href="#" data-lang="es">ES</a>
-            <a href="#" data-lang="ar">AR</a>
-          </div>
-        </div>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Tema Değiştir">🌙</button>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Menüyü Aç">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
+include 'includes/header.php';
+include 'includes/navbar.php';
+include 'includes/disclaimer.php';
+?>
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-overlay"></div>
@@ -74,12 +26,59 @@
     </div>
   </section>
 
+  <!-- Next Event Countdown Section -->
+  <section class="countdown-section" id="next-event-countdown">
+    <div class="countdown-container">
+      <div class="countdown-info" data-animate>
+        <span class="section-tag">Yaklaşan Etkinlik...</span>
+        <h2 class="countdown-event-title">Yazılım Geliştirme Kampı</h2>
+        <p class="countdown-event-desc">
+          Fatih Sultan Mehmed Han'ın mühendislik vizyonu ve Ali Kuşçu'nun astronomi mirasını günümüz kodlarıyla buluşturuyoruz. 
+          3 günlük yoğunlaştırılmış yazılım kampımıza katılarak yerinizi şimdiden ayırtın!
+        </p>
+        <ul class="countdown-meta-list">
+          <li>📍 <strong>Yer:</strong> Bilgisayar Laboratuvarı</li>
+          <li>🗣️ <strong>Konuşmacı:</strong> Mustafa Çelik (Yazılım Eğitmeni)</li>
+          <li>📅 <strong>Zaman:</strong> 15 Haziran 2026, 14:00</li>
+        </ul>
+        <div style="margin-top: 24px;">
+          <a href="faaliyetler/yazilim-atolyesi.php" class="btn btn-primary">Etkinlik Detayı</a>
+        </div>
+      </div>
+      
+      <div class="countdown-widget" data-animate>
+        <h3>Kayıtların Kapanmasına Kalan Süre</h3>
+        <div class="timer-display" id="event-timer" data-target-date="2026-06-15T14:00:00+03:00">
+          <div class="timer-segment">
+            <span class="timer-num" id="days">00</span>
+            <span class="timer-label">Gün</span>
+          </div>
+          <div class="timer-divider">:</div>
+          <div class="timer-segment">
+            <span class="timer-num" id="hours">00</span>
+            <span class="timer-label">Saat</span>
+          </div>
+          <div class="timer-divider">:</div>
+          <div class="timer-segment">
+            <span class="timer-num" id="minutes">00</span>
+            <span class="timer-label">Dakika</span>
+          </div>
+          <div class="timer-divider">:</div>
+          <div class="timer-segment">
+            <span class="timer-num" id="seconds">00</span>
+            <span class="timer-label">Saniye</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Ali Kuşçu & Fatih Section -->
   <section class="section" id="life">
     <div class="section-header">
       <span class="section-tag" data-animate>Büyük Miras</span>
-      <h2 class="section-title" data-animate>İlim Yolunda Bir Deha</h2>
-      <h2 class="section-title" data-animate>Ali Kuşçu</h2>
+      <h2 class="section-title" data-animate>İlim Yolunda Bir Deha:</h2>
+      <h2 class="section-title" data-animate>Ali Kuşçu Kimdir?</h2>
       <p class="section-desc" data-animate>Fatih Sultan Mehmed Han ve Ali Kuşçu’nun bilime ve fenne verdiği eşsiz değer,
         genç nesillerimize ilham kaynağı olmaya devam ediyor.</p>
     </div>
@@ -141,7 +140,7 @@
           <h3>Yazılım Atölyesi</h3>
           <p>Modern web teknolojileri, Python ile algoritma geliştirme ve yapay zekaya giriş eğitimleri sunuyoruz.</p>
         </div>
-        <a href="faaliyetler/yazilim-atolyesi.html" class="btn-link" id="act-btn-yazilim">Detayları Gör
+        <a href="faaliyetler/yazilim-atolyesi.php" class="btn-link" id="act-btn-yazilim">Detayları Gör
           <span>&rarr;</span></a>
       </div>
 
@@ -152,7 +151,7 @@
           <h3>Astronomi Gözlemleri</h3>
           <p>Ali Kuşçu'nun izinde, teleskoplarla gökyüzünü inceliyor, uzay ve gök mekaniği üzerine sohbet ediyoruz.</p>
         </div>
-        <a href="faaliyetler/astronomi-gozlemleri.html" class="btn-link" id="act-btn-astronomi">Detayları Gör
+        <a href="faaliyetler/astronomi-gozlemleri.php" class="btn-link" id="act-btn-astronomi">Detayları Gör
           <span>&rarr;</span></a>
       </div>
 
@@ -163,7 +162,7 @@
           <h3>Gençlik Sohbetleri</h3>
           <p>Günümüz meselelerini akılcı, sorgulayıcı ve ahlaki bir perspektifle ele aldığımız dinamik buluşmalar.</p>
         </div>
-        <a href="faaliyetler/genclik-sohbetleri.html" class="btn-link" id="act-btn-sohbet">Detayları Gör
+        <a href="faaliyetler/genclik-sohbetleri.php" class="btn-link" id="act-btn-sohbet">Detayları Gör
           <span>&rarr;</span></a>
       </div>
 
@@ -175,7 +174,7 @@
           <p>Bilim tarihi, felsefe, edebiyat ve fikir eserlerini her hafta derinlemesine analiz ediyor ve tartışıyoruz.
           </p>
         </div>
-        <a href="faaliyetler/kitap-tahlilleri.html" class="btn-link" id="act-btn-kitap">Detayları Gör
+        <a href="faaliyetler/kitap-tahlilleri.php" class="btn-link" id="act-btn-kitap">Detayları Gör
           <span>&rarr;</span></a>
       </div>
 
@@ -187,7 +186,7 @@
           <p>Çevremizdeki ihtiyaç sahiplerine el uzatıyor, sosyal sorumluluk projeleri ile yardımlaşma bilincini
             yayıyoruz.</p>
         </div>
-        <a href="faaliyetler/sosyal-yardim.html" class="btn-link" id="act-btn-yardim">Detayları Gör
+        <a href="faaliyetler/sosyal-yardim.php" class="btn-link" id="act-btn-yardim">Detayları Gör
           <span>&rarr;</span></a>
       </div>
 
@@ -198,21 +197,21 @@
           <h3>Spor Etkinlikleri</h3>
           <p>Haftalık halı saha maçları, doğa yürüyüşleri ve masa tenisi turnuvaları ile dinamik ve zinde kalıyoruz.</p>
         </div>
-        <a href="faaliyetler/spor-etkinlikleri.html" class="btn-link" id="act-btn-spor">Detayları Gör
+        <a href="faaliyetler/spor-etkinlikleri.php" class="btn-link" id="act-btn-spor">Detayları Gör
           <span>&rarr;</span></a>
       </div>
     </div>
     <div class="section-actions" data-animate>
-      <a href="faaliyetler.html" class="btn btn-primary" id="btn-view-all-activities-bottom">Tüm Faaliyetleri
+      <a href="faaliyetler.php" class="btn btn-primary" id="btn-view-all-activities-bottom">Tüm Faaliyetleri
         Listele</a>
     </div>
   </section>
 
-  <!-- Upcoming Activities Section -->
+  <!-- Upcoming Events Section -->
   <section class="section" id="upcoming">
     <div class="section-header">
       <span class="section-tag" data-animate>Dinamik Takvim</span>
-      <h2 class="section-title" data-animate>Yaklaşan Faaliyetlerimiz</h2>
+      <h2 class="section-title" data-animate>Yaklaşan Etkinliklerimiz</h2>
       <p class="section-desc" data-animate>Yakın zamanda gerçekleşecek eğitim, söyleşi ve etkinliklerimize katılarak
         yerinizi ayırtın.</p>
     </div>
@@ -232,7 +231,7 @@
             <li>🗣️ <strong>Konuşmacı:</strong> Mustafa Çelik (Yazılım Eğitmeni)</li>
           </ul>
           <div class="upcoming-footer">
-            <a href="faaliyetler/yazilim-atolyesi.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+            <a href="faaliyetler/yazilim-atolyesi.php" class="btn btn-secondary btn-upcoming-detail">Faaliyet
               Detayı</a>
           </div>
         </div>
@@ -252,7 +251,7 @@
             <li>🗣️ <strong>Konuşmacı:</strong> Prof. Dr. Selim Aksoy (Gökbilimci)</li>
           </ul>
           <div class="upcoming-footer">
-            <a href="faaliyetler/astronomi-gozlemleri.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+            <a href="faaliyetler/astronomi-gozlemleri.php" class="btn btn-secondary btn-upcoming-detail">Faaliyet
               Detayı</a>
           </div>
         </div>
@@ -272,7 +271,7 @@
             <li>🗣️ <strong>Konuşmacı:</strong> Ayşe Şahin (Eğitimci)</li>
           </ul>
           <div class="upcoming-footer">
-            <a href="faaliyetler/kitap-tahlilleri.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+            <a href="faaliyetler/kitap-tahlilleri.php" class="btn btn-secondary btn-upcoming-detail">Faaliyet
               Detayı</a>
           </div>
         </div>
@@ -292,7 +291,7 @@
             <li>🗣️ <strong>Konuşmacı:</strong> Hasan Demir (Koordinatör)</li>
           </ul>
           <div class="upcoming-footer">
-            <a href="faaliyetler/genclik-sohbetleri.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+            <a href="faaliyetler/genclik-sohbetleri.php" class="btn btn-secondary btn-upcoming-detail">Faaliyet
               Detayı</a>
           </div>
         </div>
@@ -300,7 +299,7 @@
     </div>
 
     <div class="section-actions" data-animate>
-      <a href="faaliyetler.html" class="btn btn-primary" id="btn-view-all-upcoming-bottom">Tüm Faaliyetleri Gör</a>
+      <a href="etkinlikler.php" class="btn btn-primary" id="btn-view-all-upcoming-bottom">Tüm Etkinlikleri Gör</a>
     </div>
   </section>
 
@@ -318,53 +317,10 @@
     </div>
 
     <div class="section-actions" data-animate>
-      <a href="katkida-bulunanlar.html" class="btn btn-secondary" id="btn-view-all-contributors">Tüm Destekçileri
+      <a href="katkida-bulunanlar.php" class="btn btn-secondary" id="btn-view-all-contributors">Tüm Destekçileri
         Gör</a>
     </div>
   </section>
-
-  <!-- Footer Section -->
-  <footer class="main-footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h2><span>Ali Kuşçu</span> Camii</h2>
-        <p>Fenni ve manevi ilimleri bir araya getirerek yarının liderlerini yetiştiren modern bir ibadet ve ilim
-          merkezi.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Hızlı Bağlantılar</h4>
-        <ul>
-          <li><a href="#hero">Giriş</a></li>
-          <li><a href="#life">Ali Kuşçu'nun Hayatı</a></li>
-          <li><a href="#activities">Faaliyetler</a></li>
-          <li><a href="#upcoming">Yaklaşan Faaliyetler</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>İletişim</h4>
-        <ul>
-          <li>E-posta: bilgi@alikuscurg.org</li>
-          <li>Adres: İstanbul, Türkiye</li>
-          <li>Hafta içi & Hafta sonu: 09:00 - 22:00</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Ali Kuşçu Camii Gençlik Merkezi. Tüm Hakları Saklıdır.</p>
-      <p>Tasarım & Geliştirme: Antigravity AI</p>
-    </div>
-  </footer>
-
-  <div id="google_translate_element" style="display:none;"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'tr' }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+<?php
+include 'includes/footer.php';
+?>
