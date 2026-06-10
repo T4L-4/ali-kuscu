@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmet Yılmaz",
+    "title": "Vakıf Başkanı",
+    "initials": "AY"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Mehmet Kaya",
+    "title": "Bilim Danışmanı",
+    "initials": "MK"
+  },
+  {
+    "id": 3,
+    "name": "Hasan Demir",
+    "title": "Gençlik Koordinatörü",
+    "initials": "HD"
+  },
+  {
+    "id": 4,
+    "name": "Mustafa Çelik",
+    "title": "Yazılım Eğitmeni",
+    "initials": "MÇ"
+  },
+  {
+    "id": 5,
+    "name": "Ayşe Şahin",
+    "title": "Eğitim Koordinatörü",
+    "initials": "AŞ"
+  },
+  {
+    "id": 6,
+    "name": "Fatma Arslan",
+    "title": "Sosyal Faaliyetler Sorumlusu",
+    "initials": "FA"
+  },
+  {
+    "id": 7,
+    "name": "Zeynep Korkmaz",
+    "title": "Kütüphane Sorumlusu",
+    "initials": "ZK"
+  },
+  {
+    "id": 8,
+    "name": "Ömer Faruk Özkan",
+    "title": "Astronomi Kulübü Lideri",
+    "initials": "ÖÖ"
+  },
+  {
+    "id": 9,
+    "name": "Fikret Yıldız",
+    "title": "Matematik Atölyesi Sorumlusu",
+    "initials": "FY"
+  },
+  {
+    "id": 10,
+    "name": "Dr. Selim Aksoy",
+    "title": "Fen Bilimleri Danışmanı",
+    "initials": "SA"
+  },
+  {
+    "id": 11,
+    "name": "Büşra Yılmaz",
+    "title": "Medya ve İletişim Sorumlusu",
+    "initials": "BY"
+  },
+  {
+    "id": 12,
+    "name": "Kerem Aslan",
+    "title": "Spor Koordinatörü",
+    "initials": "KA"
+  },
+  {
+    "id": 13,
+    "name": "Hatice Demir",
+    "title": "Tasarım Koordinatörü",
+    "initials": "HT"
+  },
+  {
+    "id": 14,
+    "name": "Abdullah Öztürk",
+    "title": "Sosyal Medya Yöneticisi",
+    "initials": "AÖ"
+  }
+]

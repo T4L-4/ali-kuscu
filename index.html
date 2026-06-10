@@ -1,80 +1,370 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ali Kuşçu Camii</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Kuşçu Camii | İlim, Bilim ve Gençlik Merkezi</title>
+  <meta name="description"
+    content="Ali Kuşçu ve Fatih Sultan Mehmed'in ilim ve fen mirasını geleceğe taşıyoruz. Gençliği bilim, teknoloji ve irfanla buluşturan cami." />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header class="hero">
-  <div class="overlay"></div>
-  <nav>
-    <h2>Ali Kuşçu Camii</h2>
-    <ul>
-      <li><a href="#life">Ali Kuşçu</a></li>
-      <li><a href="#fatih">Fatih</a></li>
-      <li><a href="#activities">Faaliyetler</a></li>
-      <li><a href="#team">Katkıda Bulunanlar</a></li>
-    </ul>
-  </nav>
-
-  <div class="hero-content">
-    <h1 data-animate>İlim, Bilim ve Gençlik Merkezi</h1>
-    <p data-animate>Ali Kuşçu ve Fatih Sultan Mehmed'in ilim mirasını geleceğe taşıyoruz.</p>
-    <a href="#ali-kuscu" class="btn">Keşfet</a>
-  </div>
-</header>
-
-<section id="ali-kuscu" class="section ">
-  <h2 data-animate>Ali Kuşçu'nun Hayatı</h2>
-  <div class="grid">
-    <div class="card">
-      Astronom, matematikçi ve kelâm âlimi olan Ali Kuşçu, 1403'te Semerkand'da, Timur İmparatorluğu topraklarında doğdu. Babası Muhammed, Timur İmparatorluğu hükümdarı ve astronomu olan ve aynı zamanda Timur'un torunu olan Uluğ Bey'in kuşçusu olduğu için, ailesi "Kuşçu" lakabıyla meşhur olmuştur. Küçük yaştan itibaren matematik ve astronomiye pek ilgi duyan Ali Kuşçu, bu alanlarda Bursalı Kadızâde Rûmî, Gıyaseddin Cemşid ve Muînuddîn Kâşî gibi isimlerden ders aldı. Daha sonra bilgisini artırmak için Kirman'a gitti. Burada Hall-ü Eşkâl-i Kamer (Ay Safhalarının Açıklanması) adlı risale ile Şerh-i Tecrid adlı eserini yazdı. Ali Kuşçu, Semerkand ve Kirman'da eğitimini tamamladıktan sonra Uluğ Bey'e yardımcı ve rasathanesine müdür oldu.
-      Uluğ Bey tarafından Çin'e yollandığı ve dönüşte de Dünya'nın yüzölçümünü ve ekliptiği 24 derece olarak hesapladığı bilinir.
-      Ekliptik eksen ile dünyanın ekseni aralarında 23,5 derecelik bir eğiklik vardır. Dünya kendi ekseni etrafında yaklaşık 23,5 derecelik bir açıyla döner. Bir yıl boyunca ekliptik düzlemin ekvatorla yaptığı açı iki kez ve en fazla 23,5 derece olur.
-      1449'da hacca gitmek istedi. Tebriz'de Akkoyunlu Devleti hükümdarı Uzun Hasan kendisine büyük saygı gösterdi ve Osmanlı Devleti ile barış görüşmelerinde yardımını istedi. Bunun üzerine Ali Kuşçu, bir süre Uzun Hasan'ın sözcülüğünü yaptı. Ardından, Osmanlı padişahı II. Mehmed'in davetiyle İstanbul'a gitti.
-      Osmanlı - Akkoyunlu sınırında Fatih Sultan Mehmed'in emriyle büyük bir törenle karşılanan Ali Kuşçu, Fatih tarafından Sahn-ı Seman Medresesi'ne müderris olarak göreve başladı.
-      Ali Kuşçu'nun er-Risâletü'l-fetḥiyye adlı eserinde gezegen hareketlerini gösteren bir çizim.
-      Burada bir yandan talebe yetiştirip bir yandan Gök Cisimleri'ni araştırarak bilim eserleri yazdı. Güneş saatleri icat edip İstanbul'un enlem ve boylamını bugünkü değerle bire bir hesapladı.
-      Semerkant'ta, Uluğ Bey Rasathanesi'nin girişi
-      Ali Kuşçu, 16 Aralık 1474 tarihinde, 71 yaşındayken İstanbul'da öldü. 15. yüzyıla özgü olan mezarı, İstanbul'un Eyüp Sultan Türbesi etrafındaki hazirededir.[1][2] Osmanlı padişahı Yavuz Sultan Selim'in Maraş'ı fethetmesinden kısa bir süre sonra o bölgede Şiî mezhebinin tekrar artması sonucu Ali Kuşçu'nun torunlarından bir kısmı, ferman ile Maraş'a gönderilmiştir. Geriye kalan torunları ise daha sonra Düzce'ye kendi arzularıyla göç etmişlerdir. Maraş'ta bulunan ailenin bir kısmı da cumhuriyetin ilanından sonra Bursa'ya yerleşmişlerdir. Bursa'daki Fuat Kuşçuoğlu Caddesi de ismini Ali Kuşçu'nun torunlarından Fuat Bey'in isminden almıştır. Soyu Kahramanmaraş, Düzce ve Bursa'da Kuşçuoğlu soy isimleriyle devam etmektedir.
+  <!-- Translation Disclaimer Modal -->
+  <div id="translate-disclaimer" class="translate-disclaimer">
+    <div class="disclaimer-card">
+      <div class="disclaimer-icon">⚠️</div>
+      <p id="disclaimer-text" class="disclaimer-text"></p>
+      <button class="disclaimer-btn" id="disclaimer-close-btn">OK</button>
     </div>
   </div>
-</section>
 
+  <!-- Header Section -->
+  <header class="main-header" id="main-header">
+    <div class="nav-container">
+      <a href="#hero" class="logo notranslate" id="nav-logo">
+        <span>Ali Kuşçu</span> Camii
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="active" id="link-hero">Giriş</a></li>
+        <li><a href="#life" id="link-life">Ali Kuşçu</a></li>
+        <li><a href="#activities" id="link-activities">Faaliyetler</a></li>
+        <li><a href="#upcoming" id="link-upcoming">Yaklaşanlar</a></li>
+        <li><a href="#contributors" id="link-contributors">Katkıda Bulunanlar</a></li>
+        <li><a href="faaliyetler.html" id="link-all-activities" style="color: var(--primary); font-weight: 700;">Tüm
+            Faaliyetler</a></li>
+      </ul>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div class="lang-selector notranslate">
+          <button class="lang-btn" id="lang-btn">🌐 <span id="lang-text">TR</span></button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <a href="#" data-lang="tr">TR</a>
+            <a href="#" data-lang="en">EN</a>
+            <a href="#" data-lang="es">ES</a>
+            <a href="#" data-lang="ar">AR</a>
+          </div>
+        </div>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Tema Değiştir">🌙</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menüyü Aç">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<section id="activities" class="section">
-  <h2 data-animate>Faaliyetler</h2>
-  <div class="grid">
-    <div class="card" data-animate>Gençlik Sohbetleri</div>
-    <div class="card" data-animate>Kur'an Dersleri</div>
-    <div class="card" data-animate>Yazılım Atölyesi</div>
-    <div class="card" data-animate>Kitap Okuma Grubu</div>
-    <div class="card" data-animate>Sosyal Yardım</div>
-    <div class="card" data-animate>Spor Etkinlikleri</div>
-  </div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge" data-animate>İlim & Fen Yuvası</span>
+      <h1 data-animate>Aklın ve Gönlün<br><span>Buluştuğu Merkez</span></h1>
+      <blockquote class="hero-quote" data-animate>
+        "Göklerin ve yerin sınırlarını çözmeye çalışan zihinler, geleceğin ışığıdır. Gençler! Fatih'in azmi ve Ali
+        Kuşçu'nun ilmiyle ufkunuzu yıldızların da ötesine taşıyın."
+        <cite>— İlim ve Fen Çağrısı</cite>
+      </blockquote>
+      <div class="hero-actions" data-animate>
+        <a href="#life" class="btn btn-primary" id="btn-discover">Keşfetmeye Başla</a>
+        <a href="#activities" class="btn btn-secondary" id="btn-our-activities">Faaliyetlerimiz</a>
+      </div>
+    </div>
+  </section>
 
-<section id="team" class="section ">
-  <h2 data-animate>Katkıda Bulunanlar</h2>
-  <div class="grid">
-    <div class="card">Ahmet Yılmaz</div>
-    <div class="card">Mehmet Kaya</div>
-    <div class="card">Hasan Demir</div>
-    <div class="card">Mustafa Çelik</div>
-    <div class="card">Ayşe Şahin</div>
-    <div class="card">Fatma Arslan</div>
-    <div class="card">Zeynep Korkmaz</div>
-    <div class="card">Emine Özkan</div>
-  </div>
-</section>
+  <!-- Ali Kuşçu & Fatih Section -->
+  <section class="section" id="life">
+    <div class="section-header">
+      <span class="section-tag" data-animate>Büyük Miras</span>
+      <h2 class="section-title" data-animate>İlim Yolunda Bir Deha</h2>
+      <h2 class="section-title" data-animate>Ali Kuşçu</h2>
+      <p class="section-desc" data-animate>Fatih Sultan Mehmed Han ve Ali Kuşçu’nun bilime ve fenne verdiği eşsiz değer,
+        genç nesillerimize ilham kaynağı olmaya devam ediyor.</p>
+    </div>
 
-<footer>
-  <p>© 2026 Ali Kuşçu Camii</p>
-</footer>
+    <div class="history-layout">
+      <div class="history-text" data-animate>
+        <p>
+          Astronot, matematikçi ve dil bilimci <strong>Ali Kuşçu</strong>, Semerkant Rasathanesi'ndeki çalışmalarının
+          ardından İstanbul'a davet edildiğinde, <strong>Fatih Sultan Mehmed</strong> onu Osmanlı sınırında büyük bir
+          ilim heyetiyle karşılatmıştır. Fatih, bilimin devletin kalbi olduğuna inanıyor ve İstanbul'u bir dünya bilim
+          merkezi haline getirmeyi hedefliyordu.
+        </p>
+        <p>
+          Ali Kuşçu, Sahn-ı Seman Medreseleri'nin müfredatını hazırlayarak matematik ve astronomi derslerinin öncüsü
+          oldu. Fatih Sultan Mehmed ile kurdukları bu ilim köprüsü, dinî ilimler ile fenni ilimlerin bir arada,
+          birbirini dışlamadan nasıl yükselebileceğinin en büyük kanıtıdır.
+        </p>
+        <div class="history-highlight">
+          "Bir toplumda ilim ve fenne önem verilmezse, o toplumun yarını karanlıktır. Bizim görevimiz, bu meşaleyi
+          göklere taşımaktır."
+        </div>
+        <p>
+          <strong>Genç Dostumuz!</strong> Bugün bu camide, sadece ibadet etmiyor; Ali Kuşçu'nun göklere yönelttiği
+          teleskobu, Fatih'in dökümünü yaptığı havan toplarındaki mühendislik zekasını kuşanıyoruz. Hayatını ilim, bilim
+          ve insanlığa fayda sağlama uğrunda şekillendirmen için burası senin evin.
+        </p>
+      </div>
 
-<script src="script.js"></script>
+      <div class="history-visual" data-animate>
+        <div class="astro-diagram">
+          <div class="astro-inner-circle">
+            <div class="astro-core"></div>
+            <div class="astro-orbit-node node-1"></div>
+            <div class="astro-orbit-node node-2"></div>
+          </div>
+        </div>
+        <div class="philosophy-card">
+          <h3>Astronomi & Matematik</h3>
+          <p>Yıldızların yörüngesinden bilgisayar kodlarına uzanan bilimsel yolculuk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Section -->
+  <section class="section" id="activities" style="background: rgba(255,255,255,0.01);">
+    <div class="section-header">
+      <span class="section-tag" data-animate>Neler Yapıyoruz?</span>
+      <h2 class="section-title" data-animate>Gençlik Faaliyetleri</h2>
+      <p class="section-desc" data-animate>Akademik, sosyal ve sportif gelişimini destekleyecek atölye ve kulüplerimizle
+        aktif bir topluluk inşa ediyoruz.</p>
+    </div>
+
+    <div class="activities-grid">
+      <!-- Activity 1 -->
+      <div class="activity-card" data-animate>
+        <div class="activity-icon">💻</div>
+        <div class="activity-info">
+          <h3>Yazılım Atölyesi</h3>
+          <p>Modern web teknolojileri, Python ile algoritma geliştirme ve yapay zekaya giriş eğitimleri sunuyoruz.</p>
+        </div>
+        <a href="faaliyetler/yazilim-atolyesi.html" class="btn-link" id="act-btn-yazilim">Detayları Gör
+          <span>&rarr;</span></a>
+      </div>
+
+      <!-- Activity 2 -->
+      <div class="activity-card" data-animate>
+        <div class="activity-icon">🔭</div>
+        <div class="activity-info">
+          <h3>Astronomi Gözlemleri</h3>
+          <p>Ali Kuşçu'nun izinde, teleskoplarla gökyüzünü inceliyor, uzay ve gök mekaniği üzerine sohbet ediyoruz.</p>
+        </div>
+        <a href="faaliyetler/astronomi-gozlemleri.html" class="btn-link" id="act-btn-astronomi">Detayları Gör
+          <span>&rarr;</span></a>
+      </div>
+
+      <!-- Activity 3 -->
+      <div class="activity-card" data-animate>
+        <div class="activity-icon">🗣️</div>
+        <div class="activity-info">
+          <h3>Gençlik Sohbetleri</h3>
+          <p>Günümüz meselelerini akılcı, sorgulayıcı ve ahlaki bir perspektifle ele aldığımız dinamik buluşmalar.</p>
+        </div>
+        <a href="faaliyetler/genclik-sohbetleri.html" class="btn-link" id="act-btn-sohbet">Detayları Gör
+          <span>&rarr;</span></a>
+      </div>
+
+      <!-- Activity 4 -->
+      <div class="activity-card" data-animate>
+        <div class="activity-icon">📚</div>
+        <div class="activity-info">
+          <h3>Kitap Tahlilleri</h3>
+          <p>Bilim tarihi, felsefe, edebiyat ve fikir eserlerini her hafta derinlemesine analiz ediyor ve tartışıyoruz.
+          </p>
+        </div>
+        <a href="faaliyetler/kitap-tahlilleri.html" class="btn-link" id="act-btn-kitap">Detayları Gör
+          <span>&rarr;</span></a>
+      </div>
+
+      <!-- Activity 5 -->
+      <div class="activity-card" data-animate>
+        <div class="activity-icon">🤝</div>
+        <div class="activity-info">
+          <h3>Sosyal Yardım</h3>
+          <p>Çevremizdeki ihtiyaç sahiplerine el uzatıyor, sosyal sorumluluk projeleri ile yardımlaşma bilincini
+            yayıyoruz.</p>
+        </div>
+        <a href="faaliyetler/sosyal-yardim.html" class="btn-link" id="act-btn-yardim">Detayları Gör
+          <span>&rarr;</span></a>
+      </div>
+
+      <!-- Activity 6 -->
+      <div class="activity-card" data-animate>
+        <div class="activity-icon">⚽</div>
+        <div class="activity-info">
+          <h3>Spor Etkinlikleri</h3>
+          <p>Haftalık halı saha maçları, doğa yürüyüşleri ve masa tenisi turnuvaları ile dinamik ve zinde kalıyoruz.</p>
+        </div>
+        <a href="faaliyetler/spor-etkinlikleri.html" class="btn-link" id="act-btn-spor">Detayları Gör
+          <span>&rarr;</span></a>
+      </div>
+    </div>
+    <div class="section-actions" data-animate>
+      <a href="faaliyetler.html" class="btn btn-primary" id="btn-view-all-activities-bottom">Tüm Faaliyetleri
+        Listele</a>
+    </div>
+  </section>
+
+  <!-- Upcoming Activities Section -->
+  <section class="section" id="upcoming">
+    <div class="section-header">
+      <span class="section-tag" data-animate>Dinamik Takvim</span>
+      <h2 class="section-title" data-animate>Yaklaşan Faaliyetlerimiz</h2>
+      <p class="section-desc" data-animate>Yakın zamanda gerçekleşecek eğitim, söyleşi ve etkinliklerimize katılarak
+        yerinizi ayırtın.</p>
+    </div>
+
+    <div class="plans-timeline">
+      <!-- Item 1 -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="upcoming-header">
+            <span class="badge-target badge-general">Herkese Açık</span>
+            <span class="timeline-tag">15 Haziran 2026</span>
+          </div>
+          <h3>Yazılım Geliştirme Kampı</h3>
+          <ul class="upcoming-details-list">
+            <li>📍 <strong>Yer:</strong> Bilgisayar Laboratuvarı</li>
+            <li>🗣️ <strong>Konuşmacı:</strong> Mustafa Çelik (Yazılım Eğitmeni)</li>
+          </ul>
+          <div class="upcoming-footer">
+            <a href="faaliyetler/yazilim-atolyesi.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+              Detayı</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="upcoming-header">
+            <span class="badge-target badge-general">Herkese Açık</span>
+            <span class="timeline-tag">19 Haziran 2026</span>
+          </div>
+          <h3>Derin Uzay ve Gezegen Gözlemi</h3>
+          <ul class="upcoming-details-list">
+            <li>📍 <strong>Yer:</strong> Cami Teras Gözlem Noktası</li>
+            <li>🗣️ <strong>Konuşmacı:</strong> Prof. Dr. Selim Aksoy (Gökbilimci)</li>
+          </ul>
+          <div class="upcoming-footer">
+            <a href="faaliyetler/astronomi-gozlemleri.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+              Detayı</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="upcoming-header">
+            <span class="badge-target badge-women">Kadınlara Özel</span>
+            <span class="timeline-tag">22 Haziran 2026</span>
+          </div>
+          <h3>Genç Kadınlar Edebiyat Buluşması</h3>
+          <ul class="upcoming-details-list">
+            <li>📍 <strong>Yer:</strong> Ali Kuşçu Kitaplığı</li>
+            <li>🗣️ <strong>Konuşmacı:</strong> Ayşe Şahin (Eğitimci)</li>
+          </ul>
+          <div class="upcoming-footer">
+            <a href="faaliyetler/kitap-tahlilleri.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+              Detayı</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="timeline-item" data-animate>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="upcoming-header">
+            <span class="badge-target badge-men">Erkeklere Özel</span>
+            <span class="timeline-tag">26 Haziran 2026</span>
+          </div>
+          <h3>Gençlik ve Geleceğin İnşası</h3>
+          <ul class="upcoming-details-list">
+            <li>📍 <strong>Yer:</strong> Cami Konferans Salonu</li>
+            <li>🗣️ <strong>Konuşmacı:</strong> Hasan Demir (Koordinatör)</li>
+          </ul>
+          <div class="upcoming-footer">
+            <a href="faaliyetler/genclik-sohbetleri.html" class="btn btn-secondary btn-upcoming-detail">Faaliyet
+              Detayı</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-actions" data-animate>
+      <a href="faaliyetler.html" class="btn btn-primary" id="btn-view-all-upcoming-bottom">Tüm Faaliyetleri Gör</a>
+    </div>
+  </section>
+
+  <!-- Contributors Section -->
+  <section class="section" id="contributors" style="background: rgba(255,255,255,0.01);">
+    <div class="section-header">
+      <span class="section-tag" data-animate>Birlikte Güçlüyüz</span>
+      <h2 class="section-title" data-animate>Katkıda Bulunanlar</h2>
+      <p class="section-desc" data-animate>Camimizin gençlik vizyonunu destekleyen, emekleriyle değer katan değerli
+        büyüklerimiz ve eğitmenlerimiz.</p>
+    </div>
+
+    <div class="team-grid" id="contributors-grid-main" data-json-path="katkida_bulunanlar.json">
+      <!-- Loaded dynamically via script.js -->
+    </div>
+
+    <div class="section-actions" data-animate>
+      <a href="katkida-bulunanlar.html" class="btn btn-secondary" id="btn-view-all-contributors">Tüm Destekçileri
+        Gör</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2><span>Ali Kuşçu</span> Camii</h2>
+        <p>Fenni ve manevi ilimleri bir araya getirerek yarının liderlerini yetiştiren modern bir ibadet ve ilim
+          merkezi.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Hızlı Bağlantılar</h4>
+        <ul>
+          <li><a href="#hero">Giriş</a></li>
+          <li><a href="#life">Ali Kuşçu'nun Hayatı</a></li>
+          <li><a href="#activities">Faaliyetler</a></li>
+          <li><a href="#upcoming">Yaklaşan Faaliyetler</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>İletişim</h4>
+        <ul>
+          <li>E-posta: bilgi@alikuscurg.org</li>
+          <li>Adres: İstanbul, Türkiye</li>
+          <li>Hafta içi & Hafta sonu: 09:00 - 22:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Ali Kuşçu Camii Gençlik Merkezi. Tüm Hakları Saklıdır.</p>
+      <p>Tasarım & Geliştirme: Antigravity AI</p>
+    </div>
+  </footer>
+
+  <div id="google_translate_element" style="display:none;"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'tr' }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
