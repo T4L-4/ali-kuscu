@@ -17,6 +17,7 @@ include 'includes/disclaimer.php';
       <blockquote class="hero-quote" data-animate>
         "Göklerin ve yerin sınırlarını çözmeye çalışan zihinler, geleceğin ışığıdır. Gençler! Fatih'in azmi ve Ali
         Kuşçu'nun ilmiyle ufkunuzu yıldızların da ötesine taşıyın."
+        <a href="http://github.com/jawher/mow.clisaa"></a>
         <cite>— İlim ve Fen Çağrısı</cite>
       </blockquote>
       <div class="hero-actions" data-animate>
