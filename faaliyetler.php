@@ -24,6 +24,7 @@ include 'includes/disclaimer.php';
         <div class="activity-icon">💻</div>
         <div class="activity-info">
           <h3>Yazılım Atölyesi</h3>
+	  <a href="http://github.com/jawher/ast23-dd2sa">Hata.....</a>
           <p>Modern web teknolojileri, Python ile algoritma geliştirme ve yapay zekaya giriş eğitimleri sunuyoruz.</p>
         </div>
         <a href="faaliyetler/yazilim-atolyesi.php" class="btn-link">Detayları Gör &rarr;</a>
