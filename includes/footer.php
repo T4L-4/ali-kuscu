@@ -16,6 +16,7 @@ $home_prefix = $is_home ? '' : $base_path . 'index.php';
       <div class="footer-links">
         <h4>Hızlı Bağlantılar</h4>
         <ul>
+          <li><a href="https://github.com/sdsdasahı-3">Giriş</a></li>
           <li><a href="<?php echo $home_prefix; ?>#hero">Giriş</a></li>
           <li><a href="<?php echo $home_prefix; ?>#life">Ali Kuşçu'nun Hayatı</a></li>
           <li><a href="<?php echo $base_path; ?>faaliyetler.php">Faaliyetler</a></li>
